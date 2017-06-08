@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="550.0" style="-fx-background-color: #81F7F3;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mokujin.Controller">
+    <children>
+        <Label fx:id="workTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="261.0" text="Оптимізація рівня гемоглобіна після операції" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="20.0" left="150.0" right="20.0" top="20.0" />
+            </VBox.margin>
+        </Label>
+      <VBox prefHeight="108.0" prefWidth="550.0" style="-fx-background-color: #58D3F7;">
+         <children>
+            <HBox prefHeight="70.0" prefWidth="550.0">
+               <children>
+                  <VBox prefHeight="59.0" prefWidth="172.0">
+                     <children>
+                        <Label text="Вхідні змінні" />
+                        <Label text="Вік">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Значення">
+                           <VBox.margin>
+                              <Insets left="23.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="age">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="41.0" prefWidth="550.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="151.0" text="Константа">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="constant" prefHeight="25.0" prefWidth="101.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="120.0" prefWidth="631.0" style="-fx-background-color: #58ACFA;">
+         <children>
+            <HBox prefHeight="23.0" prefWidth="631.0" style="-fx-background-color: #58ACFA;">
+               <children>
+                  <Label prefHeight="37.0" prefWidth="164.0" text="Змінні управління">
+                     <padding>
+                        <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="37.0" prefWidth="220.0" text="Коефіцієнт регресії">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label text="Обмеження">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="47.0" prefWidth="631.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="187.0" text="Час перфузії">
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="perfusionTime" prefHeight="27.0" prefWidth="73.0">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <VBox prefHeight="44.0" prefWidth="101.0">
+                     <children>
+                        <Label text="Мінімум">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="minPerfusion" prefHeight="25.0" prefWidth="75.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="42.0" prefWidth="98.0">
+                     <children>
+                        <Label text="Максимум">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="maxPerfusion" prefHeight="25.0" prefWidth="75.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="47.0" prefWidth="631.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="187.0" text="Час перетиснення аорти">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="clampingTime" prefHeight="27.0" prefWidth="73.0">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <VBox prefHeight="44.0" prefWidth="101.0">
+                     <children>
+                        <Label text="Мінімум">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="minClamping" prefHeight="25.0" prefWidth="75.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="42.0" prefWidth="98.0">
+                     <children>
+                        <Label text="Максимум">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="maxClamping" prefHeight="25.0" prefWidth="75.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #5882FA;">
+         <children>
+            <HBox prefHeight="23.0" prefWidth="631.0">
+               <children>
+                  <Label prefHeight="37.0" prefWidth="166.0" text="Змінні стану" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="40.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label prefHeight="37.0" prefWidth="209.0" text="Коефіцієнт регресії" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label prefHeight="37.0" prefWidth="90.0" text="Обмеження" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="180.0" text="Рівень еритроцитів (%)" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="erythrocytes">
+                           <VBox.margin>
+                              <Insets top="17.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Мінімум" textFill="WHITE">
+                           <padding>
+                              <Insets left="25.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="minErythrocytes" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Максимум" textFill="WHITE">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="maxErythrocytes">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="180.0" text="Рівень натрію (ммоль/л)" textFill="WHITE">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="sodium">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="minSodium">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="maxSodium">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="180.0" text="Рівень калію (ммоль/л)" textFill="WHITE">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="potassium">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="minPotassium">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="maxPotassium">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="180.0" text="Рівень Гемоглобіну (г/л)" textFill="WHITE">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="hemoglobin" prefHeight="25.0" prefWidth="100.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="minHemologlobin">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="maxHemologlobin">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" top="3.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox prefHeight="46.0" prefWidth="631.0" style="-fx-background-color: #5858FA;">
+         <children>
+            <Button fx:id="sumButton" mnemonicParsing="false" onAction="#sumUp" text="Розрахувати">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="140.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearAll" text="Очистити">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="defaultButton" mnemonicParsing="false" onAction="#setDefault" text="Стандартні данні">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox prefHeight="91.0" prefWidth="631.0" style="-fx-background-color: #8258FA;">
+         <children>
+            <HBox prefHeight="21.0" prefWidth="631.0">
+               <children>
+                  <Label text="Час перфузії:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="perfusionTimeLabel" prefHeight="17.0" prefWidth="150.0" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Рівень натрію:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="sodiumLabel" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="19.0" prefWidth="631.0">
+               <children>
+                  <Label text="Час перетиснення аорти:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="clampingTimeLabel" prefHeight="17.0" prefWidth="83.0" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Рівень  калію:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="potassiumLabel" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="16.0" prefWidth="631.0">
+               <children>
+                  <Label text="Рівень еритроцитів:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="erythrocytesLabel" prefHeight="17.0" prefWidth="111.0" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Рівень гемоглобіну:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="hemologlobinLabel" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="16.0" prefWidth="631.0">
+               <children>
+                  <Label text="Вік:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="ageLabel" prefHeight="17.0" prefWidth="201.0" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Константа:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="constantLabel" prefHeight="17.0" prefWidth="54.0" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exit" text="Вийти">
+         <VBox.margin>
+            <Insets bottom="10.0" left="475.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+    </children>
+</VBox>
